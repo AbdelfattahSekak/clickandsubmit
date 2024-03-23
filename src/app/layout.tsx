@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import { ModalsProvider } from "@mantine/modals";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +23,10 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className="flex min-h-screen">
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider>
+          {" "}
+          <ModalsProvider>{children} </ModalsProvider>
+        </MantineProvider>
       </body>
     </html>
   );
